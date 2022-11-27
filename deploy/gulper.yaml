@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gulper
+spec:
+  selector:
+    matchLabels:
+      app: gulper
+  template:
+    metadata:
+      labels:
+        app: gulper
+    spec:
+      containers:
+      - name: gulper
+        image: gulper
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

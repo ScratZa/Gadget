@@ -21,24 +21,3 @@ func GetDeployments(kubediscovery kubediscovery.IKubeDiscoveryService) func(w ht
 		json.NewEncoder(w).Encode(deployments)
 	}
 }
-
-// func AddDefinitions(c *gin.Context) {
-// 	var newDefinition deployments.Deployment
-// 	if err := c.BindJSON(&newDefinition); err != nil {
-// 		return
-// 	}
-
-// 	definitionList = append(definitionList, newDefinition)
-// 	c.IndentedJSON(http.StatusCreated, newDefinition)
-// }
-
-// func GetDefinitionByName(c *gin.Context) {
-// 	name := c.Param("name")
-// 	for _, a := range definitionList {
-// 		if a.Name == name {
-// 			c.IndentedJSON(http.StatusOK, a)
-// 			return
-// 		}
-// 	}
-// 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "definition not found"})
-// }
